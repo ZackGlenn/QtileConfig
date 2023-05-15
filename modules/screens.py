@@ -124,7 +124,6 @@ screens = [
                         lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
                     },
                     background="#2f343f"),
-                widget.Systray(icon_size = 20),
                 widget.TextBox(
                        text = '',
                        padding = 0,
