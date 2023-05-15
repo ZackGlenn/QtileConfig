@@ -1,3 +1,4 @@
+import os
 from libqtile.lazy import lazy
 from libqtile.config import Key
 
@@ -71,13 +72,14 @@ keys = [
         desc="Spawn a command using a prompt widget"),
 
     # Standard keyboard signals
-    Key([], "XF86AudioRaiseVolume",lazy.spawn("amixer set Master 3%+")),
-    Key([], "XF86AudioLowerVolume",lazy.spawn("amixer set Master 3%-")),
+    Key([], "XF86AudioRaiseVolume",lazy.spawn("amixer set Master 5%+")),
+    Key([], "XF86AudioLowerVolume",lazy.spawn("amixer set Master 5%-")),
     Key([], "XF86AudioMute",lazy.spawn("amixer set Master toggle")),
 
     # launch applications
-    Key([mod], "b",lazy.spawn("qutebrowser")),
-    Key([mod], "n",lazy.spawn("alacritty -e nvim")),
-    Key([mod], "e",lazy.spawn("alacritty -e joshuto")),
-    Key([mod], "c",lazy.spawn("bluetoggle -d 1 -a C4:5D:83:C5:9A:EF")),
+    Key([mod], "b", lazy.spawn("qutebrowser")),
+    Key([mod], "n", lazy.spawn("alacritty -e nvim")),
+    Key([mod], "e", lazy.spawn("alacritty -e joshuto")),
+    Key([mod], "c", lazy.spawn("bluetoggle -d 1 -a C4:5D:83:C5:9A:EF")),
+    Key([mod, "control"], "l", lazy.spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))),
 ]
