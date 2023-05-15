@@ -1,5 +1,8 @@
 [tool.pyright]
 reportPrivateImportUsage = false
+reportUnusedImport = false
+reportUnusedVariable = false
 
 [tool.ruff]
 line-length = 120
+ignore = ["F401"]

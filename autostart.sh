@@ -1,11 +1,20 @@
-#!/bin/sh
-feh --bg-scale /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png
-picom & disown # --experimental-backends --vsync should prevent screen tearing on most setups if needed
+#!/bin/bash
+xrandr --output HDMI1 --right-of eDP1
+nitrogen --restore
+keepassxc &
+disown
+nm-applet &
+disown
+picom &
+disown # --experimental-backends --vsync should prevent screen tearing on most setups if needed
 
 # Low battery notifier
-~/.config/qtile/scripts/check_battery.sh & disown
+~/.config/qtile/scripts/check_battery.sh &
+disown
 
 # Start welcome
-eos-welcome & disown
+eos-welcome &
+disown
 
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & disown # start polkit agent from GNOME
+/usr/lib/polkit-kde-authentication-agent-1 &
+disown # start polkit agent from kde
