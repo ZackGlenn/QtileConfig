@@ -14,6 +14,8 @@ keys = [
         "space",
         lazy.layout.next(),
         desc="Move window focus to other window"),
+    Key([mod], "period", lazy.next_screen(), desc="Move focus to next group"),
+    Key([mod], "comma", lazy.prev_screen(), desc="Move focus to next group"),
 
     Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
 
