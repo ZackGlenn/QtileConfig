@@ -1,0 +1,5 @@
+[tool.pyright]
+reportPrivateImportUsage = false
+
+[tool.ruff]
+line-length = 120
