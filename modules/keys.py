@@ -77,6 +77,8 @@ keys = [
     Key([], "XF86AudioMute",lazy.spawn("amixer set Master toggle")),
     Key([], "XF86AudioPlay",lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioPause",lazy.spawn("playerctl play-pause")),
+    Key([], "XF86MonBrightnessUp",lazy.spawn("light -A 10")),
+    Key([], "XF86MonBrightnessDown",lazy.spawn("light -U 10")),
 
     # launch applications
     Key([mod], "b", lazy.spawn("qutebrowser")),
