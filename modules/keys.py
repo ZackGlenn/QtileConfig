@@ -4,6 +4,7 @@ from libqtile.config import Key
 
 mod = "mod4"
 terminal = "alacritty"
+script_dir = os.path.expanduser('~/.config/qtile/')
 
 keys = [
     # Switch between windows
@@ -72,19 +73,19 @@ keys = [
         desc="Spawn a command using a prompt widget"),
 
     # Standard keyboard signals
-    Key([], "XF86AudioRaiseVolume",lazy.spawn("amixer set Master 5%+")),
-    Key([], "XF86AudioLowerVolume",lazy.spawn("amixer set Master 5%-")),
+    Key([], "XF86AudioRaiseVolume",lazy.spawn(script_dir + "changeVolume.sh 5%+")),
+    Key([], "XF86AudioLowerVolume",lazy.spawn(script_dir + "changeVolume.sh 5%-")),
     Key([], "XF86AudioMute",lazy.spawn("amixer set Master toggle")),
     Key([], "XF86AudioPlay",lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioPause",lazy.spawn("playerctl play-pause")),
-    Key([], "XF86MonBrightnessUp",lazy.spawn("light -A 10")),
-    Key([], "XF86MonBrightnessDown",lazy.spawn("light -U 10")),
+    Key([], "XF86MonBrightnessUp",lazy.spawn(script_dir + "changeBrightness.sh -A 10")),
+    Key([], "XF86MonBrightnessDown",lazy.spawn(script_dir + "changeBrightness.sh -U 10")),
 
     # launch applications
     Key([mod], "b", lazy.spawn("qutebrowser")),
     Key([mod], "n", lazy.spawn("alacritty -e nvim")),
     Key([mod], "e", lazy.spawn("alacritty -e joshuto")),
     Key([mod], "c", lazy.spawn("bluetoggle -d 1 -a C4:5D:83:C5:9A:EF")),
-    Key([mod, "control"], "l", lazy.spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))),
+    Key([mod, "control"], "l", lazy.spawn(os.path.expanduser("~/.config/rofi/powermenu.sh"))),
     Key([mod, "shift"], "b", lazy.spawn("rofi-bluetooth")),
 ]
