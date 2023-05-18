@@ -74,7 +74,7 @@ screens = [
                        foreground='#2f343f',
                        ),   
                 widget.TextBox(
-                    text='',
+                    text=' ',
                     mouse_callbacks= {
                         'Button1':
                         lambda: qtile.cmd_spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))
@@ -154,7 +154,7 @@ screens = [
                        foreground='#2f343f',
                        ),   
                 widget.TextBox(
-                    text='',
+                    text=' ',
                     mouse_callbacks= {
                         'Button1':
                         lambda: qtile.cmd_spawn(os.path.expanduser('~/.config/rofi/powermenu.sh'))
