@@ -12,10 +12,10 @@ volume="$(amixer -M -D pulse get Master | tail -1 | awk '{print $5}' | sed 's/[^
 mute="$(amixer -M -D pulse get Master | tail -1 | awk '{print $7}' | sed 's/[^a-z]*//g')"
 if [[ $volume == 0 || "$mute" == "off" ]]; then
 	# Show the sound muted notification
-	dunstify -a "changeVolume" -u low -i audio-volume-muted -h string:x-dunst-stack-tag:$msgTag "Volume muted"
+	dunstify -a "changeVolume" -u low -i notification-audio-volume-muted -h string:x-dunst-stack-tag:$msgTag "Volume muted"
 else
 	# Show the volume notification
-	dunstify -a "changeVolume" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
+	dunstify -a "changeVolume" -u low -i notification-audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
 		-h int:value:"$volume" "Volume: ${volume}%"
 fi
 
