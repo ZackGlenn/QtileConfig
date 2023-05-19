@@ -1,6 +1,8 @@
 #!/bin/bash
 xrandr --output HDMI1 --right-of eDP1
 nitrogen --restore
+kdeconnect-indicator &
+disown
 keepassxc &
 disown
 nm-applet &
