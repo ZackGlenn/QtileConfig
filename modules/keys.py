@@ -6,6 +6,24 @@ mod = "mod4"
 terminal = "alacritty"
 script_dir = os.path.expanduser('~/.config/qtile/')
 
+def window_to_next_screen(qtile, switch_group=False, switch_screen=True):
+    old_screen = qtile.screens.index(qtile.current_screen)
+    new_screen = (old_screen + 1) % len(qtile.screens)
+    group = qtile.screens[new_screen].group.name
+    qtile.current_window.togroup(group, switch_group=switch_group)
+    if switch_screen:
+        qtile.cmd_to_screen(new_screen)
+
+
+def window_to_prev_screen(qtile, switch_group=False, switch_screen=True):
+    old_screen = qtile.screens.index(qtile.current_screen)
+    new_screen = (old_screen - 1) % len(qtile.screens)
+    group = qtile.screens[new_screen].group.name
+    qtile.current_window.togroup(group, switch_group=switch_group)
+    if switch_screen:
+        qtile.cmd_to_screen(new_screen)
+
+
 keys = [
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -16,8 +34,10 @@ keys = [
         "tab",
         lazy.layout.next(),
         desc="Move window focus to other window"),
-    Key([mod], "period", lazy.next_screen(), desc="Move focus to next group"),
-    Key([mod], "comma", lazy.prev_screen(), desc="Move focus to next group"),
+    Key([mod], "period", lazy.next_screen(), desc="Move focus to next screen"),
+    Key([mod], "comma", lazy.prev_screen(), desc="Move focus to previous screen"),
+    Key([mod, "shift"], "period", lazy.function(window_to_next_screen), desc="Move window to next screen"),
+    Key([mod, "shift"], "comma", lazy.function(window_to_prev_screen), desc="Move window to previous screen"),
 
     Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
 
