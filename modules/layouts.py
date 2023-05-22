@@ -3,7 +3,7 @@ from libqtile.config import Match
 
 layouts = [
     layout.MonadTall(margin=8, border_focus='#5294e2', border_normal='#2c5380'),
-    #layout.Columns(border_focus_stack='#d75f5f'),
+    # layout.Columns(border_focus_stack='#d75f5f'),
     layout.Max(margin=8, border_focus='#5294e2', border_normal='#2c5380', border_width=2),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2, margin=8, border_focus='#5294e2', border_normal='#2c5380'),

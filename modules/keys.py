@@ -67,7 +67,7 @@ keys = [
         "l",
         lazy.layout.shrink(),
         desc="Shrink window"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], "n", lazy.layout.reset(), desc="Reset all window sizes"),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
