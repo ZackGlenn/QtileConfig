@@ -6,7 +6,7 @@ mod = "mod4"
 terminal = "alacritty"
 script_dir = os.path.expanduser('~/.config/qtile/')
 
-def window_to_next_screen(qtile, switch_group=False, switch_screen=True):
+def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
     old_screen = qtile.screens.index(qtile.current_screen)
     new_screen = (old_screen + 1) % len(qtile.screens)
     group = qtile.screens[new_screen].group.name
@@ -15,7 +15,7 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=True):
         qtile.cmd_to_screen(new_screen)
 
 
-def window_to_prev_screen(qtile, switch_group=False, switch_screen=True):
+def window_to_prev_screen(qtile, switch_group=False, switch_screen=False):
     old_screen = qtile.screens.index(qtile.current_screen)
     new_screen = (old_screen - 1) % len(qtile.screens)
     group = qtile.screens[new_screen].group.name
