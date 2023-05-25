@@ -8,7 +8,7 @@ msgTag="myvolume"
 amixer -M -D pulse set Master "$@" >/dev/null
 
 # Query amixer for the current volume and whether or not the speaker is muted
-volume="$(amixer -M -D pulse get Master | tail -1 | awk '{print $5}' | sed 's/[^0-9]*//g')"
+volume="$(amixer -M -D pulse get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')"
 mute="$(amixer -M -D pulse get Master | tail -1 | awk '{print $7}' | sed 's/[^a-z]*//g')"
 if [[ $volume == 0 || "$mute" == "off" ]]; then
 	# Show the sound muted notification
