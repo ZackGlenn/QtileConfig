@@ -93,8 +93,8 @@ keys = [
         desc="Spawn a command using a prompt widget"),
 
     # Standard keyboard signals
-    Key([], "XF86AudioRaiseVolume",lazy.spawn(script_dir + "changeVolume.sh 5%+")),
-    Key([], "XF86AudioLowerVolume",lazy.spawn(script_dir + "changeVolume.sh 5%-")),
+    Key([], "XF86AudioRaiseVolume",lazy.spawn(script_dir + "changeVolume.sh +5%")),
+    Key([], "XF86AudioLowerVolume",lazy.spawn(script_dir + "changeVolume.sh -5%")),
     Key([], "XF86AudioMute",lazy.spawn("amixer set Master toggle")),
     Key([], "XF86AudioPlay",lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioPause",lazy.spawn("playerctl play-pause")),

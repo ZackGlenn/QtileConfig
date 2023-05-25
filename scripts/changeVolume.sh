@@ -5,18 +5,18 @@
 msgTag="myvolume"
 
 # Change the volume using alsa(might differ if you use pulseaudio)
-amixer -M -D pulse set Master "$@" >/dev/null
+pactl set-sink-volume @DEFAULT_SINK@ "$@"
 
 # Query amixer for the current volume and whether or not the speaker is muted
-volume="$(amixer -M -D pulse get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')"
-mute="$(amixer -M -D pulse get Master | tail -1 | awk '{print $7}' | sed 's/[^a-z]*//g')"
-if [[ $volume == 0 || "$mute" == "off" ]]; then
+volume="$(pactl get-sink-volume @DEFAULT_SINK@ | head -1 | awk '{print $5}')"
+mute="$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')"
+if [[ $volume == "0%" || "$mute" == "yes" ]]; then
 	# Show the sound muted notification
 	dunstify -a "changeVolume" -u low -i notification-audio-volume-muted -h string:x-dunst-stack-tag:$msgTag "Volume muted"
 else
 	# Show the volume notification
 	dunstify -a "changeVolume" -u low -i notification-audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
-		-h int:value:"$volume" "Volume: ${volume}%"
+		-h int:value:"$volume" "Volume: ${volume}"
 fi
 
 # Play the volume changed sound
