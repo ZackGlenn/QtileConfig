@@ -1,6 +1,6 @@
 #!/bin/bash
-xrandr --output HDMI1 --right-of eDP1
-nitrogen --restore
+picom &
+disown # --experimental-backends --vsync should prevent screen tearing on most setups if needed
 kdeconnect-indicator &
 disown
 keepassxc &
@@ -11,8 +11,6 @@ cbatticon &
 disown
 blueman-applet &
 disown
-picom &
-disown # --experimental-backends --vsync should prevent screen tearing on most setups if needed
 
 # Low battery notifier
 ~/.config/qtile/scripts/check_battery.sh &
