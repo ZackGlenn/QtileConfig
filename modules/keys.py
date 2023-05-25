@@ -4,7 +4,7 @@ from libqtile.config import Key
 
 mod = "mod4"
 terminal = "alacritty"
-script_dir = os.path.expanduser('~/.config/qtile/')
+script_dir = os.path.expanduser('~/.config/qtile/scripts/')
 
 def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
     old_screen = qtile.screens.index(qtile.current_screen)
