@@ -16,9 +16,5 @@ disown
 ~/.config/qtile/scripts/check_battery.sh &
 disown
 
-# Start welcome
-eos-welcome &
-disown
-
 /usr/lib/polkit-kde-authentication-agent-1 &
 disown # start polkit agent from kde
