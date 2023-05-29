@@ -48,6 +48,7 @@ class MyVolume(widget.Volume):
             with open(self.wob, 'a') as f:
                 f.write(str(self.volume) + "\n")
 
+
 volume = MyVolume(
     fontsize=18,
     font='Font Awesome 5 Free',
