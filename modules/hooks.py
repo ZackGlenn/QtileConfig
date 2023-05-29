@@ -1,4 +1,4 @@
-from libqtile import hook
+from libqtile import hook, qtile
 import subprocess
 import os
 
@@ -11,3 +11,7 @@ def autostart():
 @hook.subscribe.startup
 def always_autostart():
     subprocess.call([qtile_path + 'autostart_always.sh'])
+
+@hook.subscribe.startup_complete
+def assign_groups_to_screens():
+    qtile.groups_map["2"].cmd_toscreen(1, toggle=False)
