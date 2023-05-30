@@ -1,4 +1,5 @@
 from libqtile import hook, qtile
+from modules.screens import get_num_monitors
 import subprocess
 import os
 
@@ -14,4 +15,5 @@ def always_autostart():
 
 @hook.subscribe.startup_complete
 def assign_groups_to_screens():
-    qtile.groups_map["2"].cmd_toscreen(1, toggle=False)
+    if get_num_monitors() > 1:
+        qtile.groups_map["2"].cmd_toscreen(1, toggle=False)
