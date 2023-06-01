@@ -11,6 +11,8 @@ cbatticon &
 disown
 blueman-applet &
 disown
+~/.config/qtile/scripts/auto_lock.sh &
+disown
 
 # Low battery notifier
 ~/.config/qtile/scripts/check_battery.sh &
