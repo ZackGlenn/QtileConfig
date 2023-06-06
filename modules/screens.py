@@ -1,4 +1,4 @@
-from libqtile import qtile, bar, hook
+from libqtile import qtile, bar
 from Xlib import display as xdisplay # this import requires python-xlib to be installed
 from modules.widgets import widget, volume
 from libqtile.config import Screen
