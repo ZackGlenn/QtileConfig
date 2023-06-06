@@ -12,6 +12,8 @@ disown
 blueman-applet &
 disown
 ~/.config/qtile/scripts/auto_lock.sh &
+disown &
+/usr/lib/deja-dup/deja-dup-monitor &
 disown
 
 # Low battery notifier
