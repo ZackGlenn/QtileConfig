@@ -22,3 +22,5 @@ disown
 
 /usr/lib/polkit-kde-authentication-agent-1 &
 disown # start polkit agent from kde
+
+setxkbmap -option "caps:escape_shifted_capslock"
