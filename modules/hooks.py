@@ -17,4 +17,5 @@ def always_autostart():
 def assign_groups_to_screens():
     if get_num_monitors() > 1:
         qtile.groups_map["2"].cmd_toscreen(1, toggle=False)
+
     subprocess.call([qtile_scripts_path + 'autostart_after.sh'])
