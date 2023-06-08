@@ -56,16 +56,16 @@ screen_set = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.CurrentLayoutIcon(scale=0.75),
-                widget.CheckUpdates(
-                    update_interval=1800,
-                    distro="Arch_yay",
-                    display_format="{updates} Updates",
-                    foreground="#ffffff",
-                    mouse_callbacks={
-                        'Button1':
-                        lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
-                    },
-                    background="#2f343f"),
+                # widget.CheckUpdates(
+                #     update_interval=1800,
+                #     distro="Arch_paru",
+                #     display_format="{updates} Updates",
+                #     foreground="#ffffff",
+                #     mouse_callbacks={
+                #         'Button1':
+                #         lambda: qtile.cmd_spawn(terminal + ' -e paru -Syu')
+                #     },
+                #     background="#2f343f"),
                 widget.Systray(icon_size = 20),
                 widget.TextBox(
                        text = '',
@@ -137,16 +137,16 @@ screen_set = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.CurrentLayoutIcon(scale=0.75),
-                widget.CheckUpdates(
-                    update_interval=1800,
-                    distro="Arch_yay",
-                    display_format="{updates} Updates",
-                    foreground="#ffffff",
-                    mouse_callbacks={
-                        'Button1':
-                        lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
-                    },
-                    background="#2f343f"),
+                # widget.CheckUpdates(
+                #     update_interval=1800,
+                #     distro="Arch_paru",
+                #     display_format="{updates} Updates",
+                #     foreground="#ffffff",
+                #     mouse_callbacks={
+                #         'Button1':
+                #         lambda: qtile.cmd_spawn(terminal + ' -e paru -Syu')
+                #     },
+                #     background="#2f343f"),
                 widget.TextBox(
                        text = '',
                        padding = 0,
