@@ -20,7 +20,7 @@ disown
 ~/.config/qtile/scripts/check_battery.sh &
 disown
 
-/usr/lib/polkit-kde-authentication-agent-1 &
+/usr/bin/lxpolkit &
 disown # start polkit agent from kde
 
 setxkbmap -option "caps:escape_shifted_capslock"
