@@ -104,6 +104,8 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioPause", lazy.spawn("playerctl play-pause")),
+    Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
+    Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
     Key([], "XF86MonBrightnessUp",lazy.spawn(script_dir + "changeBrightness.sh -A 10")),
     Key([], "XF86MonBrightnessDown",lazy.spawn(script_dir + "changeBrightness.sh -U 10")),
 
