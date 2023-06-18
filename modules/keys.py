@@ -96,14 +96,14 @@ keys = [
     Key([mod, "mod1"], "f", lazy.window.toggle_floating(), desc="Toggle floating"),
 
     # Standard keyboard signals
-    Key([], "XF86AudioRaiseVolume",lazy.spawn(script_dir + "changeVolume.sh +5%")),
-    Key([], "XF86AudioLowerVolume",lazy.spawn(script_dir + "changeVolume.sh -5%")),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn(script_dir + "changeVolume.sh +5%")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn(script_dir + "changeVolume.sh -5%")),
 
 
 
-    Key([], "XF86AudioMute",lazy.spawn("amixer set Master toggle")),
-    Key([], "XF86AudioPlay",lazy.spawn("playerctl play-pause")),
-    Key([], "XF86AudioPause",lazy.spawn("playerctl play-pause")),
+    Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),
+    Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
+    Key([], "XF86AudioPause", lazy.spawn("playerctl play-pause")),
     Key([], "XF86MonBrightnessUp",lazy.spawn(script_dir + "changeBrightness.sh -A 10")),
     Key([], "XF86MonBrightnessDown",lazy.spawn(script_dir + "changeBrightness.sh -U 10")),
 
