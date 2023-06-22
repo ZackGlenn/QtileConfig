@@ -1,4 +1,5 @@
 #!/bin/bash
+autorandr --change &
 picom &
 disown # --experimental-backends --vsync should prevent screen tearing on most setups if needed
 kdeconnect-indicator &
@@ -12,7 +13,7 @@ disown
 blueman-applet &
 disown
 ~/.config/qtile/scripts/auto_lock.sh &
-disown &
+disown
 /usr/lib/deja-dup/deja-dup-monitor &
 disown
 
