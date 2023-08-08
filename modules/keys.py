@@ -116,4 +116,7 @@ keys = [
     Key([mod], "c", lazy.spawn("bluetoggle -d 1 -a C4:5D:83:C5:9A:EF")),
     Key([mod], "x", lazy.spawn(os.path.expanduser("~/.config/rofi/powermenu.sh"))),
     Key([mod, "shift"], "b", lazy.spawn("rofi-bluetooth")),
+
+    # misc
+    Key([mod], "d", lazy.spawn("dunstctl close-all"))
 ]
