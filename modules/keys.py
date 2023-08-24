@@ -113,7 +113,7 @@ keys = [
     Key([mod], "b", lazy.spawn("qutebrowser")),
     Key([mod], "n", lazy.spawn("alacritty -e nvim")),
     Key([mod], "e", lazy.spawn("alacritty -e joshuto")),
-    Key([mod], "c", lazy.spawn("bluetoggle -d 1 -a C4:5D:83:C5:9A:EF")),
+    Key([mod], "c", lazy.spawn(script_dir + "toggleEarbuds.sh")),
     Key([mod], "x", lazy.spawn(os.path.expanduser("~/.config/rofi/powermenu.sh"))),
     Key([mod, "shift"], "b", lazy.spawn("rofi-bluetooth")),
 
