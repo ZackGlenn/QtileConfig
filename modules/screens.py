@@ -4,6 +4,7 @@ from modules.widgets import widget, volume
 from libqtile.config import Screen
 from modules.keys import terminal
 import os
+from copy import copy
 
 def make_widgets():
     return [   
@@ -74,7 +75,7 @@ def make_widgets():
     ]
 
 widgets1 = make_widgets()
-widgets2 = [w for w in make_widgets() if not isinstance(w, widget.Systray)]
+widgets2 = [copy(w) for w in make_widgets() if not isinstance(w, widget.Systray)]
 
 screens = [
     Screen(
