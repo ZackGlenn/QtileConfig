@@ -12,7 +12,7 @@ cbatticon &
 disown
 blueman-applet &
 disown
-~/.config/qtile/scripts/auto_lock.sh &
+light-locker &
 disown
 /usr/lib/deja-dup/deja-dup-monitor &
 disown
@@ -22,6 +22,6 @@ disown
 disown
 
 /usr/bin/lxpolkit &
-disown # start polkit agent from kde
+disown # start polkit agent from lxde
 
 setxkbmap -option "caps:escape_shifted_capslock"
