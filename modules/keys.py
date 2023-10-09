@@ -12,7 +12,7 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
     group = qtile.screens[new_screen].group.name
     qtile.current_window.togroup(group, switch_group=switch_group)
     if switch_screen:
-        qtile.cmd_to_screen(new_screen)
+        qtile.to_screen(new_screen)
 
 
 def window_to_prev_screen(qtile, switch_group=False, switch_screen=False):
@@ -21,7 +21,7 @@ def window_to_prev_screen(qtile, switch_group=False, switch_screen=False):
     group = qtile.screens[new_screen].group.name
     qtile.current_window.togroup(group, switch_group=switch_group)
     if switch_screen:
-        qtile.cmd_to_screen(new_screen)
+        qtile.to_screen(new_screen)
 
 
 keys = [
