@@ -12,12 +12,6 @@ for i in groups:
             lazy.group[i.name].toscreen(),
             desc="Switch to group {}".format(i.name)),
 
-        Key([mod], "Right", lazy.screen.next_group(),
-            desc="Switch to next group"),
-
-        Key([mod], "Left", lazy.screen.prev_group(),
-            desc="Switch to previous group"),
-
         # mod1 + shift + letter of group = switch to & move focused window to group
         # Key([mod, "shift"],
         #     i.name,
@@ -41,4 +35,7 @@ keys.extend([
     Key([mod, "shift"], "i", lazy.window.togroup("3"), desc = "Move focused window to group 3"),
     Key([mod, "shift"], "o", lazy.window.togroup("4"), desc = "Move focused window to group 4"),
     Key([mod, "shift"], "p", lazy.window.togroup("5"), desc = "Move focused window to group 5"),
+
+    Key([mod], "Right", lazy.screen.next_group(), desc="Switch to next group"),
+    Key([mod], "Left", lazy.screen.prev_group(), desc="Switch to previous group"),
 ])
