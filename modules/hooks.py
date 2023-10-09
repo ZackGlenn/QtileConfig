@@ -11,4 +11,4 @@ def autostart():
 @hook.subscribe.screens_reconfigured
 def send_to_second_screen():
     if len(qtile.screens) > 1:
-        qtile.groups_map["2"].cmd_toscreen(1, toggle=False)
+        qtile.groups_map["2"].toscreen(1, toggle=False)
