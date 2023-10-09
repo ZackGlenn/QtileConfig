@@ -73,7 +73,7 @@ def make_widgets():
     ]
 
 widgets1 = make_widgets()
-widgets2 = [copy(w) for w in make_widgets() if not isinstance(w, widget.Systray)]
+widgets2 = [copy(w) for w in widgets1 if not isinstance(w, widget.Systray)]
 
 screens = [
     Screen(
