@@ -1,7 +1,6 @@
 #!/bin/bash
 autorandr --change &
-picom &
-disown # --experimental-backends --vsync should prevent screen tearing on most setups if needed
+picom -b & # --experimental-backends --vsync should prevent screen tearing on most setups if needed
 kdeconnect-indicator &
 disown
 keepassxc &
@@ -15,6 +14,8 @@ disown
 light-locker &
 disown
 /usr/lib/deja-dup/deja-dup-monitor &
+disown
+warpd -f &
 disown
 
 # Low battery notifier
