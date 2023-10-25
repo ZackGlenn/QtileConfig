@@ -1,6 +1,7 @@
 #!/bin/bash
 autorandr --change &
-picom -b & # --experimental-backends --vsync should prevent screen tearing on most setups if needed
+picom &
+disown # --experimental-backends --vsync should prevent screen tearing on most setups if needed
 kdeconnect-indicator &
 disown
 keepassxc &
