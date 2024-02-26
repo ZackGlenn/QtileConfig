@@ -15,6 +15,7 @@ cursor_warp = False
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 wmname = "Qtile"
+floats_kept_above = True
 widget_defaults = dict(
         font='Cascadia Code',
         fontsize=13,
