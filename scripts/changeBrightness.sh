@@ -5,10 +5,10 @@
 msgTag="mybrightness"
 
 # Change the brightness using light
-light "$@" >/dev/null
+brightnessctl set "$@" >/dev/null
 
 # Query light for the current brightness
-brightness="$(light | awk -F '.' '{print $1}')"
+brightness="$((100 * $(brightnessctl get) / 4285))"
 
 # Show the brightness notification
 dunstify -a "changeBrightness" -u low -h string:x-dunst-stack-tag:$msgTag \

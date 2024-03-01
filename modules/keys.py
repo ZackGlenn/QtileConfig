@@ -106,8 +106,8 @@ keys = [
     Key([], "XF86AudioPause", lazy.spawn("playerctl play-pause")),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next")),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
-    Key([], "XF86MonBrightnessUp",lazy.spawn(script_dir + "changeBrightness.sh -A 10")),
-    Key([], "XF86MonBrightnessDown",lazy.spawn(script_dir + "changeBrightness.sh -U 10")),
+    Key([], "XF86MonBrightnessUp",lazy.spawn(script_dir + "changeBrightness.sh 10%+")),
+    Key([], "XF86MonBrightnessDown",lazy.spawn(script_dir + "changeBrightness.sh 10%-")),
 
     # launch applications
     Key([mod], "b", lazy.spawn("qutebrowser")),
