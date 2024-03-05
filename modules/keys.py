@@ -39,7 +39,7 @@ keys = [
     Key([mod, "shift"], "period", lazy.function(window_to_next_screen), desc="Move window to next screen"),
     Key([mod, "shift"], "comma", lazy.function(window_to_prev_screen), desc="Move window to previous screen"),
 
-    Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
+    Key([mod], "r", lazy.spawn("rofi -m -1 -show combi"), desc="spawn rofi"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
