@@ -1,29 +1,33 @@
 #!/bin/bash
-autorandr --change &
-picom &
-disown # --experimental-backends --vsync should prevent screen tearing on most setups if needed
-kdeconnect-indicator &
+
+# display configuration
+autorandr --change >/dev/null
+
+# background processes
+picom & # compositor
 disown
-keepassxc &
+light-locker & # screen locker
 disown
-nm-applet &
+/usr/lib/deja-dup/deja-dup-monitor & # backup system
 disown
-cbatticon &
+warpd -f & # mouseless cursor navigation
 disown
-blueman-applet &
+~/.config/qtile/scripts/check_battery.sh & # low battery checker
 disown
-light-locker &
-disown
-/usr/lib/deja-dup/deja-dup-monitor &
-disown
-warpd -f &
+/usr/bin/lxpolkit & # start polkit agent from lxde
 disown
 
-# Low battery notifier
-~/.config/qtile/scripts/check_battery.sh &
+# background processes with systray entries
+keepassxc & # password manager
+disown
+kdeconnect-indicator & # phone integration
+disown
+nm-applet & # network manager
+disown
+cbatticon & # battery indicator
+disown
+blueman-applet & # bluetooth manager
 disown
 
-/usr/bin/lxpolkit &
-disown # start polkit agent from lxde
-
+# X configuration
 setxkbmap -option "caps:escape_shifted_capslock"
