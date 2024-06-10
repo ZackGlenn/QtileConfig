@@ -18,6 +18,3 @@ else
 	dunstify -a "changeVolume" -u low -i notification-audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
 		-h int:value:"$volume" "Volume: ${volume}"
 fi
-
-# Play the volume changed sound
-canberra-gtk-play -i audio-volume-change -d "changeVolume"
