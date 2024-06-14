@@ -1,11 +1,11 @@
 #!/bin/bash
-# changeVolume
+# muteVolume
 
 # Arbitrary but unique message tag
 msgTag="myvolume"
 
-# Change the volume using pulse audio
-pactl set-sink-volume @DEFAULT_SINK@ "$@"
+# toggle the mute with pulse audio
+pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Query pulse audio for the current volume and whether or not the speaker is muted
 volume="$(pactl get-sink-volume @DEFAULT_SINK@ | head -1 | awk '{print $5}')"
